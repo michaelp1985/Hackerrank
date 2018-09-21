@@ -1,6 +1,49 @@
 # Week of code 18, challenge 2, 11.2015
-
 #!/bin/python3
+
+"""
+Let's consider a standard darts target that consists of K concentric circles with the corresponding 
+radiuses R1, R2,....Rk with the common center in the origin (0,0).
+If your shot lands inside the smallest circle, you will get K points. Landing between the i'th and the (i + 1)th 
+circle will give you i points. This means your shot includes the i'th circle, but excludes the (i+1)th circle. 
+If the shot lands on the boundary of the circle, it will be considered to have landed inside that circle.
+
+Finally, if you are unable to land inside or on the boundary of the 1st circle, you will get 0 points for that shot.
+You are given coordinates x'i,y'i, of N shots. Calculate the final score (the sum of all the points).
+
+Input Format
+The first line contains two space-separated integers: K and N.
+The second line contains K space-separated integers: R1, R2,...Rk.
+
+The following N lines contain two-space separated integers x'i, y'i, the coordinates of the i'th shot.
+
+Constraints
+1 <= K <= 10^4
+1 <= N <= 5 * 10^5
+1 <= R'k < R'k-1 <...< R1 <= 5 * 10^4
+|x'i|, |y'i| <= 5 * 10^4
+
+In test data worth 40% of points, 1 <= N <= 10^3 holds in addition.
+
+Output Format
+Output one integer on a single line: The sum of all the points scored.
+
+Sample Input
+5 6
+10 8 6 4 2
+0 0
+1 1
+2 2
+3 3
+4 4
+5 5
+
+Sample Output
+22
+
+Explanation
+The partial scores are: 5 + 5 + 4 + 3 + 3 + 2 = 22
+"""
 
 import sys
 import math
